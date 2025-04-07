@@ -1,0 +1,121 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper: Flex container */
+.wrapper {
+    display: flex; /* Usamos flexbox */
+    flex-direction: row; /* Alineamos los elementos de lado a lado */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 200px; /* Ancho fijo para el sidebar */
+    background-color: #16389c;
+    color: #fff;
+    height: 100vh; /* El sidebar ocupa toda la altura de la pantalla */
+    margin:0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 5px;
+   
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #5518ff;
+    border-radius: 5px
+ 
+}
+
+.sidebar-logo {
+    text-align: center;
+    padding: 5px;
+    
+}
+
+.logo-divider {
+    width: 96%;
+    margin: 10px auto 0 auto; /* centra la línea */
+    border-bottom: 1px solid rgba(172, 139, 255, 0.521);
+}
+
+/* Main Content (Navbar + Content) */
+.main-content {
+    flex: 1; /* El contenido ocupa el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Content Styles */
+.content {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Responsive Design: Ajustes para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    /* Aseguramos que el sidebar se haga más pequeño en pantallas más pequeñas */
+    .sidebar {
+        width: 200px;
+    }
+
+    /* En pantallas más pequeñas, el navbar también se ajusta */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .content {
+        margin-left: 0; /* El contenido ya no necesita dejar espacio para el sidebar */
+    }
+
+    .wrapper {
+        flex-direction: column; /* En pantallas pequeñas, los elementos van uno encima del otro */
+    }
+
+    .sidebar {
+        width: 100%; /* El sidebar ocupa el 100% del ancho en pantallas pequeñas */
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Ajustes para pantallas aún más pequeñas */
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
