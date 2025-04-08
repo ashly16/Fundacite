@@ -1,24 +1,25 @@
-/* General styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Wrapper: Flex container */
 .wrapper {
-    display: flex; /* Usamos flexbox */
-    flex-direction: row; /* Alineamos los elementos de lado a lado */
-    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
 }
 
-/* Sidebar Styles */
 .sidebar {
-    width: 200px; /* Ancho fijo para el sidebar */
-    background-color: #16389c;
-    color: #fff;
-    height: 100vh; /* El sidebar ocupa toda la altura de la pantalla */
-    margin:0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #291d92;
+    color: white;
+    padding: 20px;
+    transition: width 0.3s ease;
 }
 
 .sidebar ul {
@@ -28,88 +29,141 @@ body {
 
 .sidebar ul li {
     padding: 5px;
-   
 }
 
 .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 3px;
     color: #fff;
     text-decoration: none;
-    display: block;
-    padding: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.2s;
 }
 
 .sidebar ul li a:hover {
     background-color: #5518ff;
-    border-radius: 5px
- 
+    border-radius: 5px;
+}
+
+.sidebar ul li i {
+    width: 30px;
 }
 
 .sidebar-logo {
     text-align: center;
     padding: 5px;
-    
 }
 
 .logo-divider {
     width: 96%;
-    margin: 10px auto 0 auto; /* centra la línea */
+    margin: 10px auto 0 auto;
     border-bottom: 1px solid rgba(172, 139, 255, 0.521);
 }
 
-/* Main Content (Navbar + Content) */
-.main-content {
-    flex: 1; /* El contenido ocupa el espacio restante */
-    display: flex;
-    flex-direction: column;
+/* Toggle button */
+.sidebar-toggle {
+    position: absolute;
+    bottom: 50px;
+    left: 80%;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
-/* Navbar Styles */
+.sidebar-toggle:hover {
+    background-color: #bca3ff8c;
+}
+
+.sidebar.collapsed .sidebar-toggle i {
+    transform: rotate(180deg); 
+}
+
+.sidebar.collapsed .sidebar-toggle{
+    left: 32%;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+}
+
 .navbar {
     background-color: #f1f1f1;
     color: #333;
-    padding: 10px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
 }
 
-/* Content Styles */
 .content {
-    padding: 20px;
-    margin-top: 20px;
+    position: relative;
+    
+    padding-left: 300px;
+    top: -500px;
+
 }
 
-/* Responsive Design: Ajustes para pantallas más pequeñas */
+/* Sidebar collapsed */
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar.collapsed .link-text {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-logo img {
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.sidebar.collapsed .logo-expanded {
+    display: none;
+}
+
+.sidebar:not(.collapsed) .logo-collapsed {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
-    /* Aseguramos que el sidebar se haga más pequeño en pantallas más pequeñas */
     .sidebar {
-        width: 200px;
-    }
-
-    /* En pantallas más pequeñas, el navbar también se ajusta */
-    .navbar {
-        padding: 10px 20px;
-    }
-
-    .content {
-        margin-left: 0; /* El contenido ya no necesita dejar espacio para el sidebar */
-    }
-
-    .wrapper {
-        flex-direction: column; /* En pantallas pequeñas, los elementos van uno encima del otro */
-    }
-
-    .sidebar {
-        width: 100%; /* El sidebar ocupa el 100% del ancho en pantallas pequeñas */
+        width: 100%;
         height: auto;
+        position: relative;
     }
 
     .main-content {
         margin-left: 0;
     }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 10px;
+    }
 }
 
-/* Ajustes para pantallas aún más pequeñas */
 @media screen and (max-width: 480px) {
     .sidebar {
         width: 100%;
