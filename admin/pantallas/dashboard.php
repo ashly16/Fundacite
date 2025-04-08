@@ -1,8 +1,4 @@
-<?php
 
-include('../includes/sidebar.php');
-
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -17,21 +13,19 @@ include('../includes/sidebar.php');
 </head>
 
 <body>
-    <!-- Barra de navegación (navbar) ya incluida desde navbar.php -->
-    
-    <!-- Menú lateral (sidebar) ya incluido desde sidebar.php -->
+    <?php
 
-    <!-- Contenido principal -->
-    <div class="content">
-        <h1>Welcome to the Dashboard</h1>
-        <p>Here is the main content of your dashboard. You can add more elements as needed.</p>
+    include('../includes/sidebar.php');
 
-        <!-- Ejemplo de un área del Dashboard -->
-        <div class="statistics">
-            <h2>Statistics</h2>
-            <p>Some important statistics can be shown here.</p>
+    ?>
+   
+  
+        <div class="content">
+                    <h1>Welcome to your dashboard</h1>
+                    <p>Content goes here...</p>
         </div>
-    </div>
+
+
 
 </body>
 
