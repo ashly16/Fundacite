@@ -117,12 +117,14 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  padding-top: 12px;
+
 }
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(39, 35, 95, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  margin: 0 !important;
 }
 
 #header .logo {
@@ -139,9 +141,7 @@ h6 {
   color: #fff;
 }
 
-#header .logo img {
-  max-height: 40px;
-}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -173,7 +173,7 @@ h6 {
   padding: 10px 0 10px 30px;
   font-size: 15px;
   font-weight: 500;
-  color: #fff;
+  color: #04033b;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -197,9 +197,9 @@ h6 {
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 50px;
+  background-color: #131f5e ;
   color: #fff;
   font-size: 14px;
-  border: 2px solid #47b2e4;
   font-weight: 600;
 }
 
